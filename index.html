@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Games — barczynski.dev</title>
+    <meta name="description" content="Interactive web games by Adam Barczynski.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://games.barczynski.dev">
+    <meta property="og:title" content="Games — barczynski.dev">
+    <meta property="og:description" content="Interactive web games by Adam Barczynski.">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Games — barczynski.dev">
+    <meta name="twitter:description" content="Interactive web games by Adam Barczynski.">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#050505">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f5f0eb">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --c-bg: #050505;
+            --c-text: #fff;
+            --c-muted: #888;
+            --c-muted-hover: #fff;
+            --c-border: #1a1a1a;
+            --c-card: #0d0d0d;
+            --c-card-border: #1a1a1a;
+            --c-card-border-hover: #333;
+            --c-tag-bg: #111;
+            --c-tag: #767676;
+            --c-tag-border: #222;
+            --c-toolbar-bg: #0d0d0d;
+            --c-toolbar-border: #1a1a1a;
+            --c-btn-active: #1f1f1f;
+            --c-dim: #767676;
+            --c-arrow: #767676;
+            --c-soon-bg: #0a0a0a;
+            --c-soon-text: #767676;
+        }
+
+        html[data-theme="light"] {
+            --c-bg: #f5f0eb;
+            --c-text: #1a1410;
+            --c-muted: #7a6f65;
+            --c-muted-hover: #1a1410;
+            --c-border: #e0d8d0;
+            --c-card: #ede8e2;
+            --c-card-border: #e0d8d0;
+            --c-card-border-hover: #b8ad9e;
+            --c-tag-bg: #e8e2db;
+            --c-tag: #7a6f65;
+            --c-tag-border: #d8d0c8;
+            --c-toolbar-bg: #ece6df;
+            --c-toolbar-border: #e0d8d0;
+            --c-btn-active: #ddd6cc;
+            --c-dim: #c8bfb5;
+            --c-arrow: #998f85;
+            --c-soon-bg: #ede8e2;
+            --c-soon-text: #b8ad9e;
+        }
+
+        body {
+            background-color: var(--c-bg);
+            color: var(--c-text);
+            font-family: 'Space Grotesk', sans-serif;
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+        /* Cross-document View Transitions (Chrome 126+, graceful fallback) */
+        @view-transition {
+            navigation: auto;
+        }
+
+        ::view-transition-old(root) {
+            animation: vt-out 0.18s ease-out forwards;
+        }
+
+        ::view-transition-new(root) {
+            animation: vt-in 0.22s ease-out forwards;
+        }
+
+        @keyframes vt-out {
+            to {
+                opacity: 0;
+                transform: translateY(6px) scale(0.99);
+            }
+        }
+
+        @keyframes vt-in {
+            from {
+                opacity: 0;
+                transform: translateY(-6px) scale(1.01);
+            }
+        }
+
+        /* Focus ring */
+        :focus-visible {
+            outline: 2px solid var(--c-muted);
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+
+        /* Selection colour — theme-aware */
+        ::selection {
+            background: rgba(255, 255, 255, 0.18);
+            color: var(--c-text);
+        }
+
+        html[data-theme="light"] ::selection {
+            background: rgba(0, 0, 0, 0.12);
+            color: var(--c-text);
+        }
+
+        /* Respect reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            @view-transition {
+                navigation: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.getRegistrations().then(regs => regs.forEach(r => r.unregister()));
+        }
+    </script>
+</body>
+
+</html>

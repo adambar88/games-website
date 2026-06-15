@@ -1,0 +1,33 @@
+# Stage 1: Build the hub landing page
+FROM node:20-alpine AS hub-build
+WORKDIR /app/hub
+COPY package*.json ./
+RUN npm install
+COPY . .
+RUN npm run build
+
+# Stage 2: Build the 2048 game (from sibling directory or git)
+# Adjust the context/path in your CI pipeline as needed.
+# This example assumes the 2048 source is available at ../2048
+FROM node:20-alpine AS game-2048-build
+WORKDIR /app/2048
+COPY --from=hub-build /app/hub /tmp/hub-placeholder
+# In CI, you'd COPY the 2048 source here. For local dev, use:
+#   docker build -f Dockerfile.combined --build-context game2048=../2048 .
+# and replace the next lines with:
+#   COPY --from=game2048 . .
+# For now, this is a placeholder — see README for CI setup.
+
+# Production stage: combine everything
+FROM nginx:stable-alpine
+
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+# Hub files go to the root
+COPY --from=hub-build /app/hub/dist /usr/share/nginx/html
+
+# 2048 game goes to /2048 subpath
+# COPY --from=game-2048-build /app/2048/dist /usr/share/nginx/html/2048
+
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
