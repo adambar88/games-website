@@ -27,6 +27,15 @@ const IconSnake = () => (
   </svg>
 )
 
+// Quiz icon — Question mark symbol
+const IconQuiz = () => (
+  <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+    <rect width="36" height="36" rx="6" fill="currentColor" fillOpacity="0.12" />
+    <path d="M14 12.5C14 10.567 15.567 9 17.5 9H18.5C20.433 9 22 10.567 22 12.5C22 13.914 21.162 15.132 19.953 15.688C18.847 16.196 18 17.152 18 18.5V19.5" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+    <circle cx="18" cy="24.5" r="1.5" fill="currentColor" />
+  </svg>
+)
+
 const apps: AppEntry[] = [
   {
     title: '2048',
@@ -41,6 +50,13 @@ const apps: AppEntry[] = [
     path: '/snake/',
     tags: ['game', 'react'],
     icon: <IconSnake />,
+  },
+  {
+    title: 'Quiz',
+    description: 'AI-powered trivia & static quiz game with speed decay scoring, adaptive ELO survival, blitz mode & daily challenges.',
+    path: '/quiz/',
+    tags: ['game', 'react', 'ai'],
+    icon: <IconQuiz />,
   },
 ]
 
