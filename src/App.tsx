@@ -52,10 +52,10 @@ const apps: AppEntry[] = [
     icon: <IconSnake />,
   },
   {
-    title: 'Quiz',
-    description: 'AI-powered trivia & static quiz game with speed decay scoring, adaptive ELO survival, blitz mode & daily challenges.',
-    path: '/quiz/',
-    tags: ['game', 'react', 'ai'],
+    title: 'BrainSprint',
+    description: 'AI-powered trivia & real-time multiplayer race game with speed decay scoring, adaptive ELO survival, blitz mode & daily challenges.',
+    path: '/brainsprint/',
+    tags: ['game', 'react', 'ai', 'multiplayer'],
     icon: <IconQuiz />,
   },
 ]
