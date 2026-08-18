@@ -52,9 +52,9 @@ const apps: AppEntry[] = [
     icon: <IconSnake />,
   },
   {
-    title: 'BrainSprint',
+    title: 'MindClash',
     description: 'AI-powered trivia & real-time multiplayer race game with speed decay scoring, adaptive ELO survival, blitz mode & daily challenges.',
-    path: '/brainsprint/',
+    path: '/mindclash/',
     tags: ['game', 'react', 'ai', 'multiplayer'],
     icon: <IconQuiz />,
   },
