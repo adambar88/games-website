@@ -36,6 +36,21 @@ const IconQuiz = () => (
   </svg>
 )
 
+// Sudoku icon — 3x3 grid with numbers
+const IconSudoku = () => (
+  <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+    <rect width="36" height="36" rx="6" fill="currentColor" fillOpacity="0.12" />
+    <rect x="7" y="7" width="22" height="22" rx="3" stroke="currentColor" strokeWidth="1.2" fill="none" />
+    <line x1="14.3" y1="7" x2="14.3" y2="29" stroke="currentColor" strokeWidth="0.8" strokeOpacity="0.6" />
+    <line x1="21.6" y1="7" x2="21.6" y2="29" stroke="currentColor" strokeWidth="0.8" strokeOpacity="0.6" />
+    <line x1="7" y1="14.3" x2="29" y2="14.3" stroke="currentColor" strokeWidth="0.8" strokeOpacity="0.6" />
+    <line x1="7" y1="21.6" x2="29" y2="21.6" stroke="currentColor" strokeWidth="0.8" strokeOpacity="0.6" />
+    <text x="10.6" y="13" textAnchor="middle" fontSize="6" fontWeight="700" fontFamily="Space Grotesk, sans-serif" fill="currentColor">5</text>
+    <text x="18" y="20.3" textAnchor="middle" fontSize="6" fontWeight="700" fontFamily="Space Grotesk, sans-serif" fill="currentColor">9</text>
+    <text x="25.3" y="27.6" textAnchor="middle" fontSize="6" fontWeight="700" fontFamily="Space Grotesk, sans-serif" fill="currentColor">3</text>
+  </svg>
+)
+
 const apps: AppEntry[] = [
   {
     title: '2048',
@@ -50,6 +65,13 @@ const apps: AppEntry[] = [
     path: '/snake/',
     tags: ['game', 'react'],
     icon: <IconSnake />,
+  },
+  {
+    title: 'Sudoku',
+    description: 'The classic 9x9 logic puzzle game. 4 difficulties, daily challenge, smart pencil notes, and step-by-step hints.',
+    path: '/sudoku/',
+    tags: ['game', 'react'],
+    icon: <IconSudoku />,
   },
   {
     title: 'MindClash',
