@@ -89,7 +89,7 @@ const apps: AppEntry[] = [
   {
     title: 'Minesweeper',
     description: 'The classic mine-clearing logic game. Multiple board sizes, first-click safe start, flagging, chords & timer stats.',
-    path: '/minesweeper/',
+    path: 'https://games.barczynski.dev/minesweeper',
     tags: ['game', 'react'],
     icon: <IconMinesweeper />,
   },
