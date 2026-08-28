@@ -51,6 +51,19 @@ const IconSudoku = () => (
   </svg>
 )
 
+// Minesweeper icon — classic mine symbol
+const IconMinesweeper = () => (
+  <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+    <rect width="36" height="36" rx="6" fill="currentColor" fillOpacity="0.12" />
+    <circle cx="18" cy="18" r="6.5" fill="currentColor" />
+    <line x1="18" y1="7.5" x2="18" y2="28.5" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
+    <line x1="7.5" y1="18" x2="28.5" y2="18" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
+    <line x1="10.5" y1="10.5" x2="25.5" y2="25.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+    <line x1="10.5" y1="25.5" x2="25.5" y2="10.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+    <circle cx="15.5" cy="15.5" r="1.5" fill="#fff" fillOpacity="0.8" />
+  </svg>
+)
+
 const apps: AppEntry[] = [
   {
     title: '2048',
@@ -72,6 +85,13 @@ const apps: AppEntry[] = [
     path: '/sudoku/',
     tags: ['game', 'react'],
     icon: <IconSudoku />,
+  },
+  {
+    title: 'Minesweeper',
+    description: 'The classic mine-clearing logic game. Multiple board sizes, first-click safe start, flagging, chords & timer stats.',
+    path: '/minesweeper/',
+    tags: ['game', 'react'],
+    icon: <IconMinesweeper />,
   },
   {
     title: 'MindClash',
